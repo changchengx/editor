@@ -188,6 +188,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
 
 "---------from vim scripts----"
 " plugin from http://vim-scripts.org/vim/scripts.html
