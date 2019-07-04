@@ -12,15 +12,19 @@ function Sdcvword()
 endfunction
 nmap <silent>  <F2>  :call Sdcvword()<CR>
 
-" F3打开目录树
+
+
+" F3 open directory file tree
 nmap <silent> <F7> :NERDTreeToggle<CR>
-" NERDTREE
-" 不显示的文件
+
+" set the ignored file filter without showing them
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
 " show nerdtree when starts up
-" autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 " 退出最后一个buff时也退出nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 
 " 保存文件时自动删除行尾空格或Tab
 autocmd BufWritePre * :%s/\s\+$//e
