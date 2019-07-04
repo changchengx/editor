@@ -4,8 +4,10 @@ set title   " change the terminal's title
 set background=light
 colorscheme zellner
 
-" F2切换行号显示
+"F1 key set: toggle show line number
 nnoremap <F1> :set nonu!<CR>:set foldcolumn=0<CR>
+
+"sdcv dictionary
 function Sdcvword()
     let wordUnderCursor = expand("<cword>")
     execute '!sdcv' wordUnderCursor
@@ -13,23 +15,22 @@ endfunction
 nmap <silent>  <F2>  :call Sdcvword()<CR>
 
 
-
-" F3 open directory file tree
+"F3 open directory file tree
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
-" set the ignored file filter without showing them
+"set the ignored file filter without showing them
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-" show nerdtree when starts up
+"show nerdtree when starts up
 "autocmd vimenter * NERDTree
-" 退出最后一个buff时也退出nerdtree
+"exit nerdtree after exiting the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
-" 保存文件时自动删除行尾空格或Tab
+"autoremove the tail blank, including space and tab
 autocmd BufWritePre * :%s/\s\+$//e
 
-" 保存文件时自动删除末尾空行
+"autoremove the blank line in the end of file
 autocmd BufWritePre * :%s/^$\n\+\%$//ge
 
 set number
@@ -60,8 +61,8 @@ set novisualbell  " No blinking
 set noerrorbells  " No noise.
 
 set tags=tags;$HOME " walk directory tree upto $HOME looking for tags
-" 这样使用tags时可以首先在当前目录下查找tags文件，如果没有则转到父目录查找。依次向上。
-" set autochdir
+"这样使用tags时可以首先在当前目录下查找tags文件，如果没有则转到父目录查找。依次向上。
+"set autochdir
 
 
 "set hidden " The current buffer can be put to the background without writing to disk
