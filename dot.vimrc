@@ -51,10 +51,10 @@ set ruler                   " show the cursor position all the time
 " 上下分割窗口Ctrl+w +s
 " 关闭窗口Ctrl+w  +q
 
-" Folding
-set foldmethod=syntax
-set foldlevelstart=10
-set foldcolumn=1
+"Folding
+"set foldmethod=syntax
+"set foldlevelstart=10
+"set foldcolumn=1
 
 set novisualbell  " No blinking
 set noerrorbells  " No noise.
