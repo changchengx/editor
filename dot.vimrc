@@ -22,18 +22,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " 退出最后一个buff时也退出nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" <F7> 拷贝粘贴代码不破坏缩进
-set pastetoggle=<F3>
-
-" normal模式下Ctrl+c全选并复制到系统剪贴板(linux必须装有vim-gnome)
-nmap <C-c> gg"+yG
-
-" visual模式下Ctrl+c复制选中内容到剪贴板
-vmap <C-c> "+y
-
-" Ctrl+v原样粘贴剪切板内容
-inoremap <C-v> <ESC>"+pa
-
 " 保存文件时自动删除行尾空格或Tab
 autocmd BufWritePre * :%s/\s\+$//e
 
